@@ -28,7 +28,7 @@ $body .= "Service:  {$service}\n";
 $body .= "Postcode: {$postcode}\n\n";
 $body .= "Message:\n{$message}\n";
 
-$headers  = "From: RSM Website <noreply@rsmann.co.uk>\r\n";
+$headers  = "From: RSM Mann <info@rsmann.co.uk>\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
