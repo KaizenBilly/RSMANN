@@ -42,7 +42,7 @@
     "@id": "https://www.rsmann.co.uk/#business",
     "name": "RSM Patios & Landscaping",
     "telephone": "+447777522893",
-    "email": "info@rsm-landscaping.co.uk",
+    "email": "info@rsmann.co.uk",
     "url": "https://www.rsmann.co.uk/",
     "address": {
       "@type": "PostalAddress",
@@ -466,7 +466,7 @@
               </div>
               <div>
                 <h3>Email</h3>
-                <p><a href="mailto:info@rsm-landscaping.co.uk">info@rsm-landscaping.co.uk</a></p>
+                <p><a href="mailto:info@rsmann.co.uk">info@rsmann.co.uk</a></p>
               </div>
             </div>
             <div class="contact-method">
@@ -501,7 +501,28 @@
           <h2>Request a Free Quote</h2>
           <p>Fill in the form below and we'll get back to you within 24 hours.</p>
 
-          <form id="contactForm" action="#" method="POST">
+          <div id="formMessage" style="display:none;padding:14px 18px;border-radius:8px;margin-bottom:20px;font-size:15px;font-weight:600;"></div>
+          <script>
+            (function(){
+              var p = new URLSearchParams(window.location.search);
+              var s = p.get('status');
+              if (s) {
+                var el = document.getElementById('formMessage');
+                if (s === 'success') {
+                  el.textContent = "Message sent! We'll be in touch within 24 hours.";
+                  el.style.background = '#d1fae5';
+                  el.style.color = '#065f46';
+                } else {
+                  el.textContent = 'Something went wrong. Please try again or call us directly.';
+                  el.style.background = '#fee2e2';
+                  el.style.color = '#991b1b';
+                }
+                el.style.display = 'block';
+              }
+            })();
+          </script>
+
+          <form id="contactForm" action="submit.php" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
@@ -686,7 +707,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:+447777522893">07777 522 893</a></li>
-            <li><a href="mailto:info@rsm-landscaping.co.uk">info@rsm-landscaping.co.uk</a></li>
+            <li><a href="mailto:info@rsmann.co.uk">info@rsmann.co.uk</a></li>
             <li style="color: var(--text-on-dark-muted); font-size: 14px;">Norwich, Norfolk</li>
           </ul>
         </div>
