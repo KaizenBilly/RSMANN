@@ -1,4 +1,11 @@
 Options -Indexes
+
+# ── Private files: never served (repo is deployed whole by git) ──
+# Internal notes, docs, git metadata, dotfiles, env/config and backups
+RedirectMatch 404 ^/job-notes(/.*)?$
+RedirectMatch 404 /\.(?!well-known/)
+RedirectMatch 404 \.(md|env|ini|log|sql|bak|zip|sh|json|lock|yml|yaml)$
+RedirectMatch 404 ^/(?!robots\.txt$)[^/]+\.txt$
 RewriteEngine On
 
 # Remove .html extension
